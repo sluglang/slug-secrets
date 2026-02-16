@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{$title}}..title..{{/title}}</title>
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+	<link rel="stylesheet" href="/assets/normalize-8.0.1.css">
+	<link rel="stylesheet" href="/assets/milligram-1.4.1.min.css">
+	<script src="/assets/htmx-2.0.8.min.js"></script>
+
+	<style>
+        body { margin-top: 2rem; }
+        .box { padding: 1.5rem; border: 1px solid #e1e1e1; border-radius: .6rem; }
+        .muted { color: #777; }
+		.ok { border-left: .4rem solid #2ecc71; padding-left: 1rem; }
+		.err { border-left: .4rem solid #e74c3c; padding-left: 1rem; }
+		.spinner { display: none; }
+		.htmx-request .spinner { display: inline-block; }
+		pre.secret { white-space: pre-wrap; margin: 0; }
+		code.badge { padding: .2rem .5rem; border-radius: .4rem; background: #f4f5f6; }
+	</style>
+</head>
+
+<body>
+<div class="container">
+	<header style="margin-bottom: 2rem;">
+		<div class="row">
+			<div class="column">
+				<h3 style="margin-bottom:.2rem;">Slug Secrets</h3>
+				<p class="muted" style="margin:0;">One-time links for tiny truths.</p>
+			</div>
+			<div class="column" style="text-align:right;">
+				<a href="/">Create</a>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		{{$content}}{{/content}}
+	</main>
+
+	{{>footer}}
+</div>
+</body>
+</html>

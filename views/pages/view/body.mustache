@@ -1,0 +1,21 @@
+<div class="box">
+	<h4 style="margin-top:0;">Secret</h4>
+
+	<div id="panel">
+		{{#available}}
+			<p class="muted">Click reveal to view the message.</p>
+
+			<button class="button-primary"
+					hx-get="/s/{{token}}/raw"
+					hx-target="#panel"
+					hx-swap="innerHTML">
+				Reveal secret
+			</button>
+			<span class="spinner muted" style="margin-left:.8rem;">Loading…</span>
+		{{/available}}
+
+		{{^available}}
+			{{> unavailable}}
+		{{/available}}
+	</div>
+</div>

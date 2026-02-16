@@ -1,0 +1,23 @@
+<div class="ok">
+	<h5 style="margin-top:0;">Secret link created</h5>
+
+	<label for="shareLink">Share this link</label>
+	<input id="shareLink" value="{{share_url}}" readonly>
+
+	<div class="row">
+		<div class="column">
+			<button type="button"
+					onclick="navigator.clipboard.writeText(document.getElementById('shareLink').value)">
+				Copy link
+			</button>
+		</div>
+		<div class="column">
+			<a class="button button-outline" href="{{share_url}}" >Preview</a>
+		</div>
+	</div>
+
+	<p class="muted" style="margin-bottom:0;">
+		TTL: <code class="badge">{{ttl_human}}</code>
+		&nbsp; Views: <code class="badge">{{views}}</code>
+	</p>
+</div>

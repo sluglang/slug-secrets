@@ -1,0 +1,27 @@
+<p class="muted">
+	Remaining views: <code class="badge">{{remaining_views}}</code>
+	{{#expires_at}} &nbsp; Expires: <code class="badge">{{expires_at}}</code>{{/expires_at}}
+</p>
+
+<pre id="secretText" class="box secret">{{secret}}</pre>
+
+<div class="row" style="margin-top:1rem;">
+	<div class="column">
+		<button type="button"
+				onclick="navigator.clipboard.writeText(document.getElementById('secretText').innerText)">
+			Copy
+		</button>
+	</div>
+	<div class="column">
+		<button class="button-outline"
+				hx-post="/s/{{token}}/burn"
+				hx-target="#panel"
+				hx-swap="innerHTML">
+			Burn now
+		</button>
+	</div>
+</div>
+
+<p class="muted" style="margin-bottom:0;">
+	Refreshing may consume another view (depending on your server rules).
+</p>
